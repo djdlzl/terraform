@@ -1,6 +1,6 @@
 resource "aws_lb_listener" "jwcho_front-end" {
   load_balancer_arn = aws_lb.jwcho_lb.arn
-  port = "80"
+  port = 80
   protocol = "HTTP"
 
   default_action {
