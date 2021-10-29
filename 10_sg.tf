@@ -35,6 +35,16 @@ resource "aws_security_group" "jwcho_websg" {
           prefix_list_ids   = null
           security_groups = null
           self = null
+      }, {
+          description       = "mysql"
+          from_port         = 3306
+          to_port           = 3306
+          protocol          = "tcp"
+          cidr_blocks       = ["0.0.0.0/0"]
+          ipv6_cidr_blocks  = ["::/0"]
+          prefix_list_ids   = null
+          security_groups = null
+          self = null
       }
   ]
 
