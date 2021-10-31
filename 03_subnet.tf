@@ -66,4 +66,4 @@ resource "aws_db_subnet_group" "jwcho_db_sb_group" {
   tags = {
     Name = "jwcho-db-sng"
   }
-}  
+}
