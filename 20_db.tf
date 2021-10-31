@@ -14,4 +14,4 @@ resource "aws_db_instance" "jwcho_db" {
   tags = {
     "Name" = "mydb"
   }
-}
+}   
