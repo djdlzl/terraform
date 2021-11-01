@@ -38,3 +38,25 @@ resource "aws_subnet" "jwcho_pric" {
     Name = "jwcho-pric"
   }
 }
+
+#AZ-a / db subnet
+resource "aws_subnet" "jwcho_dba" {
+  vpc_id     = aws_vpc.jwcho_vpc.id
+  cidr_block = "10.0.4.0/24"
+  availability_zone = "ap-northeast-2a"
+
+  tags = {
+    Name = "jwcho-dba"
+  }
+}
+
+#AZ-c / db subnet
+resource "aws_subnet" "jwcho_dbc" {
+  vpc_id     = aws_vpc.jwcho_vpc.id
+  cidr_block = "10.0.5.0/24"
+  availability_zone = "ap-northeast-2c"
+
+  tags = {
+    Name = "jwcho-dbc"
+  }
+}

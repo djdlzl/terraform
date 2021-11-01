@@ -3,7 +3,7 @@ data "aws_ami" "amzn" {
 
   filter {
     name = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-ebs"]
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
   }
 
   filter {
@@ -20,7 +20,6 @@ resource "aws_instance" "jwcho_weba" {
   key_name                 = "tf-key1"
   vpc_security_group_ids   = [aws_security_group.jwcho_websg.id]
   availability_zone        = "ap-northeast-2a"
-  private_ip               = "10.0.0.11"
   subnet_id                = aws_subnet.jwcho_puba.id
   associate_public_ip_address = true
   user_data                = file("install_apache.sh")

@@ -1,3 +1,8 @@
+resource "aws_placement_group" "jwcho_pg" {
+  name     = "jwcho-pg"
+  strategy = "cluster"
+}
+
 resource "aws_autoscaling_group" "jwcho_atsg" {
   name = "jwcho-atsg"
   min_size = 2
